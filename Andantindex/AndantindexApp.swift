@@ -11,7 +11,7 @@ import SwiftUI
 struct AndantindexApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            OpeningView()
         }
     }
 }
