@@ -31,6 +31,9 @@ struct ComposerDetailView: View {
                 .font(.subheadline)
                 .foregroundColor(.secondary)
             
+            Text("Works")
+                .font(.title3)
+            
             WorkListView(works: sampleKeyboardWorks)
             
             Spacer()
