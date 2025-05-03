@@ -35,6 +35,8 @@ struct Composer: Codable, Identifiable {
     }
 }
 
+
+// mock data for composers
 let sampleComposers: [Composer] = [
     Composer(id: "1", name: "Bach", completeName: "Johann Sebastian Bach", birth: "1685", death: "1750", epoch: "Baroque", portrait: "https://assets.openopus.org/portraits/12091447-1568084857.jpg"),
     Composer(id: "2", name: "Beethoven", completeName: "Ludwig van Beethoven", birth: "1770", death: "1827", epoch: "Early Romantic", portrait: "https://assets.openopus.org/portraits/55910756-1568084860.jpg"),
