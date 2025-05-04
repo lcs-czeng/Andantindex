@@ -7,12 +7,35 @@
 
 import SwiftUI
 
-struct IndexTabView: View {
-    var body: some View {
-        Text("Index Tab View (coming soon)")
-    }
+// for tidiness
+enum IndexSelection: String, CaseIterable {
+    case period = "By Period"
+    case name = "By Name"
 }
 
+struct IndexTabView: View {
+    @State private var selectedView: IndexSelection = .period
+    
+    var body: some View {
+        VStack {
+            
+            // picker inspired by SpellingMobile
+            Picker("Browse composers", selection: $selectedView) {
+                Text("By Period").tag(IndexSelection.period)
+                Text("By Name").tag(IndexSelection.name)
+            }
+            .pickerStyle(.segmented)
+            .padding()
+            
+            // Simple if/else to show the selected view
+            if selectedView == .period {
+                PeriodListView()
+            } else {
+                NameListView()
+            }
+        }
+    }
+}
 
 #Preview {
     IndexTabView()

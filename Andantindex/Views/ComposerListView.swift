@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ComposerListView: View {
     let composers: [Composer]
-
+    
     var body: some View {
         NavigationView {
             List(composers) { composer in
@@ -23,7 +23,7 @@ struct ComposerListView: View {
                     }
                     .frame(width: 50, height: 50)
                     .clipShape(Circle())
-
+                    
                     VStack(alignment: .leading) {
                         Text(composer.completeName)
                             .font(.headline)

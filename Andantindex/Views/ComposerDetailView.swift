@@ -10,7 +10,7 @@ import SwiftUI
 struct ComposerDetailView: View {
     let composer: Composer
     let works: [Work]
-
+    
     var body: some View {
         VStack(spacing: 20) {
             AsyncImage(url: URL(string: composer.portrait)) { image in
@@ -19,14 +19,14 @@ struct ComposerDetailView: View {
                 Color.gray
             }
             .frame(width: 300, height: 300)
-
+            
             Text(composer.completeName)
                 .font(.title)
                 .bold()
-
+            
             Text("\(composer.birth) – \(composer.death)")
                 .font(.title3)
-
+            
             Text("Epoch: \(composer.epoch)")
                 .font(.subheadline)
                 .foregroundColor(.secondary)

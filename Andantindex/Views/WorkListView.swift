@@ -9,7 +9,7 @@ import SwiftUI
 
 struct WorkListView: View {
     let works: [Work]
-
+    
     var body: some View {
         List(works) { work in
             VStack(alignment: .leading) {
