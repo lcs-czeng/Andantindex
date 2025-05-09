@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct AndantindexApp: App {
+    @StateObject private var viewModel = ComposerViewModel()
+
     var body: some Scene {
         WindowGroup {
-            HomeView()
+            ComposerListView(viewModel: viewModel)
+                .onAppear {
+                    viewModel.fetchComposers()
+                }
         }
     }
 }
+
