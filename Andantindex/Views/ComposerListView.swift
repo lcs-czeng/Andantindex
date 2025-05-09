@@ -8,11 +8,12 @@
 import SwiftUI
 
 struct ComposerListView: View {
-    let composers: [Composer]
-    
+    // temporary, before injecting viewmodel to environment
+    @ObservedObject var viewModel: ComposerViewModel
+
     var body: some View {
         NavigationView {
-            List(composers) { composer in
+            List(viewModel.allComposers) { composer in
                 HStack {
                     // load image from internet using the portrait URL
                     AsyncImage(url: URL(string: composer.portrait)) { image in
@@ -42,5 +43,5 @@ struct ComposerListView: View {
 }
 
 #Preview {
-    ComposerListView(composers: sampleComposers)
+    ComposerListView(viewModel: ComposerViewModel())
 }

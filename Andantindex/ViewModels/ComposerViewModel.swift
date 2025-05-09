@@ -8,7 +8,7 @@
 import Foundation
 
 @Observable
-class ComposerViewModel {
+class ComposerViewModel: ObservableObject {
     
     // Stored Properties
     
