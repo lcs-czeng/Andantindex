@@ -18,7 +18,7 @@ struct Composer: Codable, Identifiable {
     let name: String
     let completeName: String
     let birth: String
-    let death: String
+    let death: String? // made optional to handle null values
     let epoch: String
     let portrait: String
     

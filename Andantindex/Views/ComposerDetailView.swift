@@ -24,7 +24,7 @@ struct ComposerDetailView: View {
                 .font(.title)
                 .bold()
             
-            Text("\(composer.birth) – \(composer.death)")
+            Text("\(composer.birth) – \(composer.death ?? "Unknown")")
                 .font(.title3)
             
             Text("Epoch: \(composer.epoch)")
