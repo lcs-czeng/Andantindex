@@ -44,7 +44,6 @@ struct ComposerListView: View {
                         }
                         .padding(.vertical, 4)
                     }
-                    .navigationTitle("Composers")
                 }
             }
         }

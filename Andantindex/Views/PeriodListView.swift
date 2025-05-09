@@ -10,7 +10,7 @@ import SwiftUI
 struct PeriodListView: View {
     // sharing data through the environment
     @EnvironmentObject var viewModel: ComposerViewModel
-
+    
     var body: some View {
         NavigationView {
             VStack {
@@ -20,7 +20,7 @@ struct PeriodListView: View {
                         .progressViewStyle(CircularProgressViewStyle())
                 } else {
                     List {
-                     
+                        
                         // iterate over the keys (periods)
                         ForEach(viewModel.composersByPeriod.keys.sorted(), id:\.self) { key in
                             
@@ -56,14 +56,16 @@ struct PeriodListView: View {
                             } header: {
                                 Text(key)
                             }
-
-                            
                         }
                     }
                     .listStyle(.grouped)
-                    .navigationTitle("Composers")
                 }
             }
         }
     }
+}
+
+#Preview {
+    PeriodListView()
+        .environmentObject(ComposerViewModel())
 }

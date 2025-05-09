@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct HomeView: View {
+    
+    @EnvironmentObject var viewModel: ComposerViewModel
 
     var body: some View {
         TabView {
@@ -28,4 +30,5 @@ struct HomeView: View {
 
 #Preview {
     HomeView()
+        .environmentObject(ComposerViewModel())
 }
