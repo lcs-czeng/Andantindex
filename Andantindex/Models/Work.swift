@@ -16,7 +16,6 @@ struct Work: Codable, Identifiable {
 }
 
 // mock data for works
-
 let sampleOrchestralWorks: [Work] = [
     Work(id: "9411", title: "Brandenburg Concerto no. 1 in F major, BWV.1046", subtitle: "", genre: "Orchestral"),
     Work(id: "9664", title: "Brandenburg Concerto no. 2 in F major, BWV.1047", subtitle: "", genre: "Orchestral"),

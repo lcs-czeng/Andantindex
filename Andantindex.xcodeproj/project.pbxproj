@@ -11,8 +11,6 @@
 		1623BF902DC3FEE6000AEDFF /* AndantindexApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BF8B2DC3FEE6000AEDFF /* AndantindexApp.swift */; };
 		1623BF912DC3FEE6000AEDFF /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BF8D2DC3FEE6000AEDFF /* HomeView.swift */; };
 		1623BF982DC3FFBA000AEDFF /* Composer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BF972DC3FFBA000AEDFF /* Composer.swift */; };
-		1623BF9A2DC40040000AEDFF /* Genre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BF992DC40040000AEDFF /* Genre.swift */; };
-		1623BF9C2DC40051000AEDFF /* Period.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BF9B2DC4004F000AEDFF /* Period.swift */; };
 		1623BF9E2DC40146000AEDFF /* FavouriteComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BF9D2DC40140000AEDFF /* FavouriteComposerView.swift */; };
 		1623BFA32DC4030E000AEDFF /* ComposerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BFA22DC4030E000AEDFF /* ComposerViewModel.swift */; };
 		1623BFA52DC41009000AEDFF /* ComposerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BFA42DC41007000AEDFF /* ComposerListView.swift */; };
@@ -31,8 +29,6 @@
 		1623BF8C2DC3FEE6000AEDFF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1623BF8D2DC3FEE6000AEDFF /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		1623BF972DC3FFBA000AEDFF /* Composer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Composer.swift; sourceTree = "<group>"; };
-		1623BF992DC40040000AEDFF /* Genre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Genre.swift; sourceTree = "<group>"; };
-		1623BF9B2DC4004F000AEDFF /* Period.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Period.swift; sourceTree = "<group>"; };
 		1623BF9D2DC40140000AEDFF /* FavouriteComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteComposerView.swift; sourceTree = "<group>"; };
 		1623BFA22DC4030E000AEDFF /* ComposerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerViewModel.swift; sourceTree = "<group>"; };
 		1623BFA42DC41007000AEDFF /* ComposerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerListView.swift; sourceTree = "<group>"; };
@@ -106,8 +102,6 @@
 			children = (
 				1664B40D2DC5B43C0097608C /* Work.swift */,
 				1623BF972DC3FFBA000AEDFF /* Composer.swift */,
-				1623BF9B2DC4004F000AEDFF /* Period.swift */,
-				1623BF992DC40040000AEDFF /* Genre.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -204,7 +198,6 @@
 				1623BFA52DC41009000AEDFF /* ComposerListView.swift in Sources */,
 				1639DF702DC6D36C00AC1D12 /* PeriodListView.swift in Sources */,
 				1664B40E2DC5B43E0097608C /* Work.swift in Sources */,
-				1623BF9C2DC40051000AEDFF /* Period.swift in Sources */,
 				1623BFA32DC4030E000AEDFF /* ComposerViewModel.swift in Sources */,
 				1639DF6C2DC6D33800AC1D12 /* IndexTabView.swift in Sources */,
 				1639DF6E2DC6D36000AC1D12 /* NameListView.swift in Sources */,
@@ -213,7 +206,6 @@
 				1623BF982DC3FFBA000AEDFF /* Composer.swift in Sources */,
 				1623BF9E2DC40146000AEDFF /* FavouriteComposerView.swift in Sources */,
 				1639DF6A2DC6D13100AC1D12 /* GenreListView.swift in Sources */,
-				1623BF9A2DC40040000AEDFF /* Genre.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
