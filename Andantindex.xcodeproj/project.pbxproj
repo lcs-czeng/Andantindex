@@ -21,6 +21,7 @@
 		1664B40C2DC5ACD30097608C /* ComposerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664B40B2DC5ACD30097608C /* ComposerDetailView.swift */; };
 		1664B40E2DC5B43E0097608C /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664B40D2DC5B43C0097608C /* Work.swift */; };
 		1664B4102DC5B5480097608C /* WorkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664B40F2DC5B5480097608C /* WorkListView.swift */; };
+		16BB5B0B2DCE7385002DD9C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 16BB5B0A2DCE737A002DD9C1 /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		1664B40B2DC5ACD30097608C /* ComposerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerDetailView.swift; sourceTree = "<group>"; };
 		1664B40D2DC5B43C0097608C /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		1664B40F2DC5B5480097608C /* WorkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListView.swift; sourceTree = "<group>"; };
+		16BB5B0A2DCE737A002DD9C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +73,7 @@
 		1623BF8E2DC3FEE6000AEDFF /* Andantindex */ = {
 			isa = PBXGroup;
 			children = (
+				16BB5B0A2DCE737A002DD9C1 /* README.md */,
 				1623BF8B2DC3FEE6000AEDFF /* AndantindexApp.swift */,
 				1639DF712DC6F04F00AC1D12 /* Functions */,
 				1623BF932DC3FEF2000AEDFF /* Models */,
@@ -182,6 +185,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				16BB5B0B2DCE7385002DD9C1 /* README.md in Resources */,
 				1623BF8F2DC3FEE6000AEDFF /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

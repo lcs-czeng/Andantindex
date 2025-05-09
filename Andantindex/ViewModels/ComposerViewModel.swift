@@ -9,13 +9,31 @@ import Foundation
 
 @MainActor
 class ComposerViewModel: ObservableObject {
+    
+    // MARK: Stored properties
     @Published var allComposers: [Composer] = []
     @Published var filteredComposers: [Composer] = []
 
+    // MARK: Computed properties
+    
+    var composersByPeriod: [String: [Composer]] {
+        
+        return Dictionary(grouping: allComposers) { currentComposer in
+            
+            currentComposer.epoch
+            
+        }
+        
+    }
+    
+    // MARK: Initializers
+    
     init() {
-        fetchComposers() // 🔍 Fetch when the view model is created
+        fetchComposers()
     }
 
+    // MARK: Functions
+    
     func fetchComposers() {
         Task {
             await fetchData()

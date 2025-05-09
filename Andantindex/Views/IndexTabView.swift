@@ -14,6 +14,7 @@ enum IndexSelection: String, CaseIterable {
 }
 
 struct IndexTabView: View {
+    @EnvironmentObject var viewModel: ComposerViewModel
     @State private var selectedView: IndexSelection = .period
     
     var body: some View {
@@ -39,5 +40,6 @@ struct IndexTabView: View {
 
 #Preview {
     IndexTabView()
+        .environmentObject(ComposerViewModel())
 }
 
