@@ -13,10 +13,8 @@ struct AndantindexApp: App {
 
     var body: some Scene {
         WindowGroup {
-            ComposerListView(viewModel: viewModel)
-                .onAppear {
-                    viewModel.fetchComposers()
-                }
+            HomeView()
+                .environmentObject(viewModel)
         }
     }
 }

@@ -74,8 +74,8 @@
 				1623BF8B2DC3FEE6000AEDFF /* AndantindexApp.swift */,
 				1639DF712DC6F04F00AC1D12 /* Functions */,
 				1623BF932DC3FEF2000AEDFF /* Models */,
-				1623BF922DC3FEEC000AEDFF /* Views */,
 				1623BF9F2DC402E4000AEDFF /* ViewModels */,
+				1623BF922DC3FEEC000AEDFF /* Views */,
 				1623BF8C2DC3FEE6000AEDFF /* Assets.xcassets */,
 			);
 			path = Andantindex;

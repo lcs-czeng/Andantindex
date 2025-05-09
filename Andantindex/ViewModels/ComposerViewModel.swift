@@ -7,40 +7,47 @@
 
 import Foundation
 
-@Observable
+@MainActor
 class ComposerViewModel: ObservableObject {
-    
-    // Stored Properties
-    
-    var allComposers: [Composer] = []
-    var filteredComposers: [Composer] = []
+    @Published var allComposers: [Composer] = []
+    @Published var filteredComposers: [Composer] = []
 
-    // Fetch composers from the API
+    init() {
+        fetchComposers() // 🔍 Fetch when the view model is created
+    }
+
     func fetchComposers() {
         Task {
             await fetchData()
         }
     }
     
-    // Perform the actual data fetching from the API
     func fetchData() async {
-        // API endpoint for fetching composers
-        let endpoint = "https://api.openopus.org/composer/list/rec.json"
         
-        // Ensure the URL is valid
+        // 1. Attempt to create a URL from the address provided
+        let endpoint = "https://api.openopus.org/composer/list/rec.json"
         guard let url = URL(string: endpoint) else {
-            print("Invalid URL.")
+            print("Invalid address for JSON endpoint.")
             return
         }
-
+        
+        // 2. Fetch the raw data from the URL
+        //
+        // Network requests can potentially fail (throw errors) so
+        // we complete them within a do-catch block to report errors
+        // if they occur.
+        //
         do {
-            // Fetch the data from the URL asynchronously
+            
+            // Fetch the data
             let (data, _) = try await URLSession.shared.data(from: url)
             
-            // Decode the data into the ComposerList model
+            // Print the received data in the debug console
+            print("Got data from endpoint, contents of response are:")
+            print(String(data: data, encoding: .utf8)!)
+            
             let decoded = try JSONDecoder().decode(ComposerList.self, from: data)
             
-            // Update the properties on the main thread
             self.allComposers = decoded.composers
             self.filteredComposers = decoded.composers // Initially, display all composers
         } catch {
