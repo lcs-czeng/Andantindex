@@ -12,8 +12,7 @@ class ComposerViewModel: ObservableObject {
     
     // MARK: Stored properties
     @Published var allComposers: [Composer] = []
-    @Published var filteredComposers: [Composer] = []
-
+    
     // MARK: Computed properties
     
     var composersByPeriod: [String: [Composer]] {
@@ -31,7 +30,7 @@ class ComposerViewModel: ObservableObject {
     init() {
         fetchComposers()
     }
-
+    
     // MARK: Functions
     
     func fetchComposers() {
@@ -64,13 +63,28 @@ class ComposerViewModel: ObservableObject {
             print("Got data from endpoint, contents of response are:")
             print(String(data: data, encoding: .utf8)!)
             
-            let decoded = try JSONDecoder().decode(ComposerList.self, from: data)
+            // 3. Decode the data into a Swift data type
+            //
+            // Create a decoder object to do most of the work for us
+            let decoder = JSONDecoder()
             
-            self.allComposers = decoded.composers
-            self.filteredComposers = decoded.composers // Initially, display all composers
+            // Use the decoder object to convert the raw data
+            // into an instance of our Swift data type
+            let decodedData = try decoder.decode(ComposerList.self, from: data)
+            
+            // If we got here, decoding succeeded,
+            // update the published property so UI updates
+            self.allComposers = decodedData.composers
+            
         } catch {
-            // Handle errors such as network failure or decoding issues
-            print("Failed to fetch or decode composer data: \(error)")
+            
+            // Show an error that we wrote and understand
+            print("Could not retrieve data from endpoint, or could not decode into an instance of a Swift data type.")
+            print("----")
+            
+            // Show the detailed error to help with debugging
+            print(error)
         }
     }
+    
 }
