@@ -12,34 +12,36 @@ struct ComposerDetailView: View {
     let works: [Work]
     
     var body: some View {
-        VStack(spacing: 20) {
-            AsyncImage(url: URL(string: composer.portrait)) { image in
-                image.resizable()
-            } placeholder: {
-                Color.gray
+        NavigationStack {
+            VStack(spacing: 20) {
+                AsyncImage(url: URL(string: composer.portrait)) { image in
+                    image.resizable()
+                } placeholder: {
+                    Color.gray
+                }
+                .frame(width: 300, height: 300)
+                
+                Text(composer.completeName)
+                    .font(.title)
+                    .bold()
+                
+                Text("\(composer.birth) – \(composer.death ?? "Unknown")")
+                    .font(.title3)
+                
+                Text("Epoch: \(composer.epoch)")
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                
+                Text("Works")
+                    .font(.title3)
+                
+                WorkListView(works: sampleKeyboardWorks)
+                
+                Spacer()
             }
-            .frame(width: 300, height: 300)
-            
-            Text(composer.completeName)
-                .font(.title)
-                .bold()
-            
-            Text("\(composer.birth) – \(composer.death ?? "Unknown")")
-                .font(.title3)
-            
-            Text("Epoch: \(composer.epoch)")
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-            
-            Text("Works")
-                .font(.title3)
-            
-            WorkListView(works: sampleKeyboardWorks)
-            
-            Spacer()
+            .padding()
+            .navigationTitle(composer.name)
         }
-        .padding()
-        .navigationTitle(composer.name)
     }
 }
 

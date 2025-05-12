@@ -44,6 +44,7 @@ struct ComposerListView: View {
                         }
                         .padding(.vertical, 4)
                     }
+                    .listStyle(PlainListStyle())
                 }
             }
         }

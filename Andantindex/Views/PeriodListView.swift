@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct PeriodListView: View {
+    
     // sharing data through the environment
     @EnvironmentObject var viewModel: ComposerViewModel
     
@@ -61,6 +62,7 @@ struct PeriodListView: View {
                     .listStyle(.grouped)
                 }
             }
+            .navigationTitle("By Period")
         }
     }
 }

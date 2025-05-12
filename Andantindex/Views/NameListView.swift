@@ -11,16 +11,23 @@ struct NameListView: View {
     
     // sharing data through the environment
     @EnvironmentObject var viewModel: ComposerViewModel
-
+    
+    @State private var isAscending = true
+    
     var body: some View {
         NavigationView {
             VStack {
+                Toggle("Sort A–Z", isOn: $isAscending)
+                    .padding()
+                
                 if viewModel.allComposers.isEmpty {
                     // Show loading spinner if no composers are available yet
                     ProgressView("Loading composers...")
                         .progressViewStyle(CircularProgressViewStyle())
                 } else {
-                    List(viewModel.allComposers) { composer in
+                    List(viewModel.allComposers.sorted {
+                        isAscending ? $0.completeName < $1.completeName : $0.completeName > $1.completeName
+                    }) { composer in
                         HStack {
                             // load image from internet using the portrait URL
                             AsyncImage(url: URL(string: composer.portrait)) { image in
@@ -45,8 +52,10 @@ struct NameListView: View {
                         }
                         .padding(.vertical, 4)
                     }
+                    .listStyle(.grouped)
                 }
             }
+            .navigationTitle("By Name")
         }
     }
 }
