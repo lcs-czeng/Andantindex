@@ -32,7 +32,12 @@ struct PeriodListView: View {
                                 // iterate over the composers
                                 
                                 ForEach(composers) { composer in
-                                    ComposerListView(composer: composer)
+                                    
+                                    NavigationLink {
+                                        ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
+                                    } label: {
+                                        ComposerListView(composer: composer)
+                                    }
                                 }
                             } header: {
                                 Text(key)

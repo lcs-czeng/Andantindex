@@ -28,7 +28,12 @@ struct NameListView: View {
                     List(viewModel.allComposers.sorted { lhs, rhs in
                         isAscending ? lhs.completeName < rhs.completeName : lhs.completeName > rhs.completeName
                     }) { composer in
-                        ComposerListView(composer: composer)
+                        
+                        NavigationLink {
+                            ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
+                        } label: {
+                            ComposerListView(composer: composer)
+                        }
                     }
                     .listStyle(.grouped)
                 }
