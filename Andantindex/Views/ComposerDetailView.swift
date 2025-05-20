@@ -13,34 +13,41 @@ struct ComposerDetailView: View {
     
     var body: some View {
         NavigationStack {
-            VStack(spacing: 20) {
-                AsyncImage(url: URL(string: composer.portrait)) { image in
-                    image.resizable()
-                } placeholder: {
-                    Color.gray
+            ScrollView {
+                VStack(spacing: 20) {
+                    AsyncImage(url: URL(string: composer.portrait)) { image in
+                        image.resizable()
+                    } placeholder: {
+                        Color.gray
+                    }
+                    .frame(width: 300, height: 300)
+                    
+                    Text(composer.completeName)
+                        .font(.title)
+                        .bold()
+                    
+                    Text("\(composer.birth) – \(composer.death ?? "Unknown")")
+                        .font(.title3)
+                    
+                    Text("Epoch: \(composer.epoch)")
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                    
+                    Spacer()
+                    
+                    Text("Works")
+                        .font(.title3)
+                        .fontWeight(.bold)
+                    
+                    WorkListView(works: works)
+                        .frame(height: 300)
+                        .background(Color(.black))
+                        .cornerRadius(12)
+                        .shadow(radius: 3)
                 }
-                .frame(width: 300, height: 300)
-                
-                Text(composer.completeName)
-                    .font(.title)
-                    .bold()
-                
-                Text("\(composer.birth) – \(composer.death ?? "Unknown")")
-                    .font(.title3)
-                
-                Text("Epoch: \(composer.epoch)")
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
-                
-                Text("Works")
-                    .font(.title3)
-                
-                WorkListView(works: sampleKeyboardWorks)
-                
-                Spacer()
+                .padding()
+                .navigationTitle(composer.name)
             }
-            .padding()
-            .navigationTitle(composer.name)
         }
     }
 }

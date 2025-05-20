@@ -12,22 +12,30 @@ struct WorkListView: View {
     
     var body: some View {
         List(works) { work in
-            VStack(alignment: .leading) {
+            VStack(alignment: .leading, spacing: 6) {
                 Text(work.title)
                     .font(.headline)
+                    .foregroundColor(.primary)
+
+                
                 if !work.subtitle.isEmpty {
                     Text(work.subtitle)
                         .font(.subheadline)
                         .foregroundColor(.secondary)
                 }
-                Text("Genre: \(work.genre)")
+                
+                Text(work.genre)
                     .font(.caption)
+                    .fontWeight(.medium)
                     .foregroundColor(.gray)
+                    .padding(.top, 2)
             }
-            .padding(.vertical, 4)
+            .padding(.vertical, 8)
         }
+        .listStyle(.plain)
     }
 }
+
 
 
 #Preview {
