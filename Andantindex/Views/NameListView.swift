@@ -25,37 +25,14 @@ struct NameListView: View {
                     ProgressView("Loading composers...")
                         .progressViewStyle(CircularProgressViewStyle())
                 } else {
-                    List(viewModel.allComposers.sorted {
-                        isAscending ? $0.completeName < $1.completeName : $0.completeName > $1.completeName
+                    List(viewModel.allComposers.sorted { lhs, rhs in
+                        isAscending ? lhs.completeName < rhs.completeName : lhs.completeName > rhs.completeName
                     }) { composer in
-                        HStack {
-                            // load image from internet using the portrait URL
-                            AsyncImage(url: URL(string: composer.portrait)) { image in
-                                image.resizable()
-                                // show gray when image is loading
-                            } placeholder: {
-                                Color.gray
-                            }
-                            .frame(width: 50, height: 50)
-                            .clipShape(Circle())
-                            
-                            VStack(alignment: .leading) {
-                                Text(composer.completeName)
-                                    .font(.headline)
-                                // Display "Unknown" if death is nil
-                                Text("\(composer.birth) – \(composer.death ?? "Unknown")")
-                                    .font(.subheadline)
-                                Text(composer.epoch)
-                                    .font(.caption)
-                                    .foregroundColor(.gray)
-                            }
-                        }
-                        .padding(.vertical, 4)
+                        ComposerListView(composer: composer)
                     }
                     .listStyle(.grouped)
                 }
             }
-            .navigationTitle("By Name")
         }
     }
 }

@@ -32,28 +32,8 @@ struct PeriodListView: View {
                                 // iterate over the composers
                                 
                                 ForEach(composers) { composer in
-                                    HStack {
-                                        // load image from internet using the portrait URL
-                                        AsyncImage(url: URL(string: composer.portrait)) { image in
-                                            image.resizable()
-                                            // show gray when image is loading
-                                        } placeholder: {
-                                            Color.gray
-                                        }
-                                        .frame(width: 50, height: 50)
-                                        .clipShape(Circle())
-                                        
-                                        VStack(alignment: .leading) {
-                                            Text(composer.completeName)
-                                                .font(.headline)
-                                            // Display "Unknown" if death is nil
-                                            Text("\(composer.birth) – \(composer.death ?? "Unknown")")
-                                                .font(.subheadline)
-                                        }
-                                    }
-                                    .padding(.vertical, 4)
+                                    ComposerListView(composer: composer)
                                 }
-                                
                             } header: {
                                 Text(key)
                             }
@@ -62,7 +42,6 @@ struct PeriodListView: View {
                     .listStyle(.grouped)
                 }
             }
-            .navigationTitle("By Period")
         }
     }
 }
