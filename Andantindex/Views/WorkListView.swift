@@ -9,35 +9,42 @@ import SwiftUI
 
 struct WorkListView: View {
     
+    // MARK: Stored Properties
     let workVM: WorkViewModel
     
+    // MARK: Body
     var body: some View {
-        List(workVM.works) { work in
-            VStack(alignment: .leading, spacing: 6) {
-                Text(work.title)
-                    .font(.headline)
-                    .foregroundColor(.primary)
+        List {
+            // Iterate over the genre keys
+            ForEach(workVM.workByGenre.keys.sorted(), id: \.self) { key in
                 
-                
-                if !work.subtitle.isEmpty {
-                    Text(work.subtitle)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                Section {
+                    // Get the works for this genre
+                    let works = workVM.workByGenre[key]!
+                    
+                    // Iterate over the works
+                    ForEach(works) { work in
+                        VStack(alignment: .leading, spacing: 6) {
+                            Text(work.title)
+                                .font(.headline)
+                                .foregroundColor(.primary)
+                            
+                            if !work.subtitle.isEmpty {
+                                Text(work.subtitle)
+                                    .font(.subheadline)
+                                    .foregroundColor(.secondary)
+                            }
+                        }
+                        .padding(.vertical, 8)
+                    }
+                } header: {
+                    Text(key)
                 }
-                
-                Text(work.genre)
-                    .font(.caption)
-                    .fontWeight(.medium)
-                    .foregroundColor(.gray)
-                    .padding(.top, 2)
             }
-            .padding(.vertical, 8)
         }
-        .listStyle(.plain)
-
+        .listStyle(.grouped)
     }
 }
-
 
 
 #Preview {

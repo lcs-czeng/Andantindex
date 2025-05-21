@@ -12,6 +12,16 @@ class WorkViewModel: Observable {
     
     var works: [Work] = []
     
+    var workByGenre: [String: [Work]] {
+        
+        return Dictionary(grouping: works) { currentWork in
+            
+            currentWork.genre
+            
+        }
+        
+    }
+    
     // MARK: Initializer
     
     init(composer: Int) {

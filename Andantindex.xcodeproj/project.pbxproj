@@ -14,7 +14,6 @@
 		1623BF9E2DC40146000AEDFF /* FavouriteComposerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BF9D2DC40140000AEDFF /* FavouriteComposerView.swift */; };
 		1623BFA32DC4030E000AEDFF /* ComposerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BFA22DC4030E000AEDFF /* ComposerViewModel.swift */; };
 		1623BFA52DC41009000AEDFF /* ComposerListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1623BFA42DC41007000AEDFF /* ComposerListView.swift */; };
-		1639DF6A2DC6D13100AC1D12 /* GenreListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639DF692DC6D12B00AC1D12 /* GenreListView.swift */; };
 		1639DF6C2DC6D33800AC1D12 /* IndexTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639DF6B2DC6D33300AC1D12 /* IndexTabView.swift */; };
 		1639DF6E2DC6D36000AC1D12 /* NameListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639DF6D2DC6D35A00AC1D12 /* NameListView.swift */; };
 		1639DF702DC6D36C00AC1D12 /* PeriodListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1639DF6F2DC6D36900AC1D12 /* PeriodListView.swift */; };
@@ -35,7 +34,6 @@
 		1623BF9D2DC40140000AEDFF /* FavouriteComposerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavouriteComposerView.swift; sourceTree = "<group>"; };
 		1623BFA22DC4030E000AEDFF /* ComposerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerViewModel.swift; sourceTree = "<group>"; };
 		1623BFA42DC41007000AEDFF /* ComposerListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerListView.swift; sourceTree = "<group>"; };
-		1639DF692DC6D12B00AC1D12 /* GenreListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreListView.swift; sourceTree = "<group>"; };
 		1639DF6B2DC6D33300AC1D12 /* IndexTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IndexTabView.swift; sourceTree = "<group>"; };
 		1639DF6D2DC6D35A00AC1D12 /* NameListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameListView.swift; sourceTree = "<group>"; };
 		1639DF6F2DC6D36900AC1D12 /* PeriodListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeriodListView.swift; sourceTree = "<group>"; };
@@ -93,7 +91,6 @@
 			children = (
 				1623BF8D2DC3FEE6000AEDFF /* HomeView.swift */,
 				1639DF6B2DC6D33300AC1D12 /* IndexTabView.swift */,
-				1639DF692DC6D12B00AC1D12 /* GenreListView.swift */,
 				1639DF6F2DC6D36900AC1D12 /* PeriodListView.swift */,
 				1639DF6D2DC6D35A00AC1D12 /* NameListView.swift */,
 				1623BFA42DC41007000AEDFF /* ComposerListView.swift */,
@@ -216,7 +213,6 @@
 				1623BF912DC3FEE6000AEDFF /* HomeView.swift in Sources */,
 				1623BF982DC3FFBA000AEDFF /* Composer.swift in Sources */,
 				1623BF9E2DC40146000AEDFF /* FavouriteComposerView.swift in Sources */,
-				1639DF6A2DC6D13100AC1D12 /* GenreListView.swift in Sources */,
 				16B8EC092DDE34EE0094BE59 /* WorkResponse.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
