@@ -8,15 +8,16 @@
 import SwiftUI
 
 struct WorkListView: View {
-    let works: [Work]
+    
+    let workVM: WorkViewModel
     
     var body: some View {
-        List(works) { work in
+        List(workVM.works) { work in
             VStack(alignment: .leading, spacing: 6) {
                 Text(work.title)
                     .font(.headline)
                     .foregroundColor(.primary)
-
+                
                 
                 if !work.subtitle.isEmpty {
                     Text(work.subtitle)
@@ -33,11 +34,12 @@ struct WorkListView: View {
             .padding(.vertical, 8)
         }
         .listStyle(.plain)
+
     }
 }
 
 
 
 #Preview {
-    WorkListView(works: sampleKeyboardWorks)
+    WorkListView(workVM: WorkViewModel(composer: 91))
 }

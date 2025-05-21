@@ -39,7 +39,7 @@ struct ComposerDetailView: View {
                         .font(.title3)
                         .fontWeight(.bold)
                     
-                    WorkListView(works: works)
+                    WorkListView(workVM: WorkViewModel(composer: Int(composer.id) ?? 0))
                         .frame(height: 300)
                         .background(Color(.black))
                         .cornerRadius(12)
