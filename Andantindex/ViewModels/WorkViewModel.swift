@@ -10,7 +10,11 @@ import Foundation
 @Observable @MainActor
 class WorkViewModel: Observable {
     
+    // MARK: Stored Properties
+    
     var works: [Work] = []
+    
+    // MARK: Computed Properties
     
     var workByGenre: [String: [Work]] {
         
@@ -67,5 +71,3 @@ class WorkViewModel: Observable {
         }
     }
 }
-
-

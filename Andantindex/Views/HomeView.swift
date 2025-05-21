@@ -9,6 +9,8 @@ import SwiftUI
 
 struct HomeView: View {
     
+    // MARK: Stored Properties
+    
     @EnvironmentObject var viewModel: ComposerViewModel
 
     var body: some View {

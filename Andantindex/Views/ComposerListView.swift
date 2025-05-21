@@ -8,24 +8,27 @@
 import SwiftUI
 
 struct ComposerListView: View {
+    
+    // MARK: Stored Property
     let composer: Composer
     
     var body: some View {
         HStack {
-            // load image from internet using the portrait URL
+            
+            // Composer portrait
             AsyncImage(url: URL(string: composer.portrait)) { image in
                 image.resizable()
-                // show gray when image is loading
             } placeholder: {
                 Color.gray
             }
             .frame(width: 50, height: 50)
             .clipShape(Circle())
             
+            // Composer name and dates
             VStack(alignment: .leading) {
                 Text(composer.completeName)
                     .font(.headline)
-                // Display "Unknown" if death is nil
+                
                 Text("\(composer.birth) – \(composer.death ?? "Unknown")")
                     .font(.subheadline)
             }

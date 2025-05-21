@@ -12,17 +12,15 @@ struct WorkListView: View {
     // MARK: Stored Properties
     let workVM: WorkViewModel
     
-    // MARK: Body
     var body: some View {
         List {
-            // Iterate over the genre keys
+            // Iterate over genres
             ForEach(workVM.workByGenre.keys.sorted(), id: \.self) { key in
                 
                 Section {
-                    // Get the works for this genre
+                    // Works grouped by genre
                     let works = workVM.workByGenre[key]!
                     
-                    // Iterate over the works
                     ForEach(works) { work in
                         VStack(alignment: .leading, spacing: 6) {
                             Text(work.title)
@@ -45,7 +43,6 @@ struct WorkListView: View {
         .listStyle(.grouped)
     }
 }
-
 
 #Preview {
     WorkListView(workVM: WorkViewModel(composer: 91))

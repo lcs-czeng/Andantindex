@@ -7,30 +7,31 @@
 
 import SwiftUI
 
-// for tidiness
+// MARK: Enum
+
 enum IndexSelection: String, CaseIterable {
     case period = "By Period"
     case name = "By Name"
 }
 
 struct IndexTabView: View {
+    
+    // MARK: Stored Properties
     @EnvironmentObject var viewModel: ComposerViewModel
     @State private var selectedView: IndexSelection = .period
     
+    // MARK: View Body
     var body: some View {
-        
         NavigationView {
             VStack {
                 
-                // picker inspired by SpellingMobile
                 Picker("Browse composers", selection: $selectedView) {
-                    Text("By Period").tag(IndexSelection.period)
-                    Text("By Name").tag(IndexSelection.name)
+                    Text(IndexSelection.period.rawValue).tag(IndexSelection.period)
+                    Text(IndexSelection.name.rawValue).tag(IndexSelection.name)
                 }
                 .pickerStyle(.segmented)
                 .padding()
                 
-                // Simple if/else to show the selected view
                 if selectedView == .period {
                     PeriodListView()
                 } else {

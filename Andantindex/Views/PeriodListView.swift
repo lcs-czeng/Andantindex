@@ -9,30 +9,28 @@ import SwiftUI
 
 struct PeriodListView: View {
     
-    // sharing data through the environment
+    // MARK: Stored Properties
     @EnvironmentObject var viewModel: ComposerViewModel
     
     var body: some View {
         NavigationView {
             VStack {
                 if viewModel.allComposers.isEmpty {
-                    // Show loading spinner if no composers are available yet
+                    
+                    // Loading view
                     ProgressView("Loading composers...")
                         .progressViewStyle(CircularProgressViewStyle())
+                    
                 } else {
+                    
+                    // Composer list grouped by period
                     List {
-                        
-                        // iterate over the keys (periods)
-                        ForEach(viewModel.composersByPeriod.keys.sorted(), id:\.self) { key in
+                        ForEach(viewModel.composersByPeriod.keys.sorted(), id: \.self) { key in
                             
                             Section {
-                                // get the composers for this period
                                 let composers = viewModel.composersByPeriod[key]!
                                 
-                                // iterate over the composers
-                                
                                 ForEach(composers) { composer in
-                                    
                                     NavigationLink {
                                         ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
                                     } label: {

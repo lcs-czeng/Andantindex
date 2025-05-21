@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ComposerDetailView: View {
+    
+    // MARK: Stored Properties
     let composer: Composer
     let works: [Work]
     
@@ -15,6 +17,8 @@ struct ComposerDetailView: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 20) {
+                    
+                    // Composer portrait
                     AsyncImage(url: URL(string: composer.portrait)) { image in
                         image.resizable()
                     } placeholder: {
@@ -22,6 +26,7 @@ struct ComposerDetailView: View {
                     }
                     .frame(width: 300, height: 300)
                     
+                    // Composer info
                     Text(composer.completeName)
                         .font(.title)
                         .bold()
@@ -29,6 +34,7 @@ struct ComposerDetailView: View {
                     Text("\(composer.birth) – \(composer.death ?? "Unknown")")
                         .font(.title3)
                     
+                    // Composer epoch
                     Text("Epoch: \(composer.epoch)")
                         .font(.subheadline)
                         .foregroundColor(.secondary)
@@ -39,6 +45,7 @@ struct ComposerDetailView: View {
                         .font(.title3)
                         .fontWeight(.bold)
                     
+                    // Works list
                     WorkListView(workVM: WorkViewModel(composer: Int(composer.id) ?? 0))
                         .frame(height: 300)
                         .background(Color(.black))
@@ -52,7 +59,6 @@ struct ComposerDetailView: View {
     }
 }
 
-// accessing mock data array
 #Preview {
     ComposerDetailView(composer: sampleComposers[0], works: sampleKeyboardWorks)
 }
