@@ -14,7 +14,6 @@ struct NameListView: View {
     @State private var isAscending = true
     
     var body: some View {
-        NavigationView {
             VStack {
                 
                 // Sorting order toggle
@@ -43,7 +42,6 @@ struct NameListView: View {
                     .listStyle(.grouped)
                 }
             }
-        }
     }
 }
 

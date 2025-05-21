@@ -13,7 +13,6 @@ struct PeriodListView: View {
     @EnvironmentObject var viewModel: ComposerViewModel
     
     var body: some View {
-        NavigationView {
             VStack {
                 if viewModel.allComposers.isEmpty {
                     
@@ -45,7 +44,6 @@ struct PeriodListView: View {
                     .listStyle(.grouped)
                 }
             }
-        }
     }
 }
 

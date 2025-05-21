@@ -53,7 +53,6 @@ struct ComposerDetailView: View {
                         .shadow(radius: 3)
                 }
                 .padding()
-                .navigationTitle(composer.name)
             }
         }
     }
