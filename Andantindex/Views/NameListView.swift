@@ -14,34 +14,34 @@ struct NameListView: View {
     @State private var isAscending = true
     
     var body: some View {
-            VStack {
+        VStack {
+            
+            // Sorting order toggle
+            Toggle("Sort A–Z", isOn: $isAscending)
+                .padding()
+            
+            if viewModel.allComposers.isEmpty {
                 
-                // Sorting order toggle
-                Toggle("Sort A–Z", isOn: $isAscending)
-                    .padding()
+                // MARK: Loading State
+                ProgressView("Loading composers...")
+                    .progressViewStyle(CircularProgressViewStyle())
                 
-                if viewModel.allComposers.isEmpty {
+            } else {
+                
+                // Composer list sorted by name
+                List(viewModel.allComposers.sorted { lhs, rhs in
+                    isAscending ? lhs.completeName < rhs.completeName : lhs.completeName > rhs.completeName
+                }) { composer in
                     
-                    // MARK: Loading State
-                    ProgressView("Loading composers...")
-                        .progressViewStyle(CircularProgressViewStyle())
-                    
-                } else {
-                    
-                    // Composer list sorted by name
-                    List(viewModel.allComposers.sorted { lhs, rhs in
-                        isAscending ? lhs.completeName < rhs.completeName : lhs.completeName > rhs.completeName
-                    }) { composer in
-                        
-                        NavigationLink {
-                            ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
-                        } label: {
-                            ComposerListView(composer: composer)
-                        }
+                    NavigationLink {
+                        ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
+                    } label: {
+                        ComposerListView(composer: composer)
                     }
-                    .listStyle(.grouped)
                 }
+                .listStyle(.grouped)
             }
+        }
     }
 }
 

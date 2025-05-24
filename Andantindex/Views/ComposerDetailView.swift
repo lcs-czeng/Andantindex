@@ -10,6 +10,7 @@ import SwiftUI
 struct ComposerDetailView: View {
     
     // MARK: Stored Properties
+    @EnvironmentObject var composerVM: ComposerViewModel
     let composer: Composer
     let works: [Work]
     
@@ -26,11 +27,23 @@ struct ComposerDetailView: View {
                     }
                     .frame(width: 300, height: 300)
                     
-                    // Composer info
-                    Text(composer.completeName)
-                        .font(.title)
-                        .bold()
-                    
+                    HStack {
+                        
+                        Button(action: {
+                            composerVM.toggleFavourite(composer: composer)
+                        }) {
+                            Image(systemName: composerVM.isFavourite(composer: composer) ? "star.fill" : "star")
+                                .resizable()
+                                .frame(width: 24, height: 24)
+                                .foregroundColor(composerVM.isFavourite(composer: composer) ? .yellow : .gray)
+                        }
+                        
+                        // Composer info
+                        Text(composer.completeName)
+                            .font(.title)
+                            .bold()
+                        
+                    }
                     Text("\(composer.birth) – \(composer.death ?? "Unknown")")
                         .font(.title3)
                     
@@ -60,4 +73,5 @@ struct ComposerDetailView: View {
 
 #Preview {
     ComposerDetailView(composer: sampleComposers[0], works: sampleKeyboardWorks)
+        .environmentObject(ComposerViewModel())
 }

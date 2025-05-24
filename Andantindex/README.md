@@ -14,6 +14,10 @@ ProgressView: ProgressView was taken from the Swift UI Views Mastery book. Page 
 Sorting and toggle order: https://chatgpt.com/share/682138f3-9f14-8010-ae6c-278e8fda7f92
 https://stackoverflow.com/questions/26719744/swift-sort-array-of-objects-alphabetically
 
+Favourite functions: https://chatgpt.com/share/6832265b-22c8-8010-b4ea-2077a3627abb
+
+Deleting favourite composers: https://www.hackingwithswift.com/books/ios-swiftui/deleting-items-using-ondelete
+
 ## Images
 
 From API

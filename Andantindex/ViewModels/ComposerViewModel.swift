@@ -13,6 +13,8 @@ class ComposerViewModel: ObservableObject {
     // MARK: Stored properties
     @Published var allComposers: [Composer] = []
     
+    @Published var favouriteComposers: [Composer] = []
+        
     // MARK: Computed properties
     
     var composersByPeriod: [String: [Composer]] {
@@ -87,4 +89,24 @@ class ComposerViewModel: ObservableObject {
         }
     }
     
+    func toggleFavourite(composer: Composer) {
+        
+        // Check if current composer is in array
+        if let index = favouriteComposers.firstIndex(of: composer) {
+
+            // Remove composer
+            favouriteComposers.remove(at: index)
+        } else {
+            
+            // Add composer
+            favouriteComposers.append(composer)
+        }
+    }
+
+    func isFavourite(composer: Composer) -> Bool {
+        
+        // Check if array contain given composer
+        favouriteComposers.contains(composer)
+        
+    }
 }

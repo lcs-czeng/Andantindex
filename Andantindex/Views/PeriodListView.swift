@@ -13,37 +13,37 @@ struct PeriodListView: View {
     @EnvironmentObject var viewModel: ComposerViewModel
     
     var body: some View {
-            VStack {
-                if viewModel.allComposers.isEmpty {
-                    
-                    // Loading view
-                    ProgressView("Loading composers...")
-                        .progressViewStyle(CircularProgressViewStyle())
-                    
-                } else {
-                    
-                    // Composer list grouped by period
-                    List {
-                        ForEach(viewModel.composersByPeriod.keys.sorted(), id: \.self) { key in
+        VStack {
+            if viewModel.allComposers.isEmpty {
+                
+                // Loading view
+                ProgressView("Loading composers...")
+                    .progressViewStyle(CircularProgressViewStyle())
+                
+            } else {
+                
+                // Composer list grouped by period
+                List {
+                    ForEach(viewModel.composersByPeriod.keys.sorted(), id: \.self) { key in
+                        
+                        Section {
+                            let composers = viewModel.composersByPeriod[key]!
                             
-                            Section {
-                                let composers = viewModel.composersByPeriod[key]!
-                                
-                                ForEach(composers) { composer in
-                                    NavigationLink {
-                                        ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
-                                    } label: {
-                                        ComposerListView(composer: composer)
-                                    }
+                            ForEach(composers) { composer in
+                                NavigationLink {
+                                    ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
+                                } label: {
+                                    ComposerListView(composer: composer)
                                 }
-                            } header: {
-                                Text(key)
                             }
+                        } header: {
+                            Text(key)
                         }
                     }
-                    .listStyle(.grouped)
                 }
+                .listStyle(.grouped)
             }
+        }
     }
 }
 

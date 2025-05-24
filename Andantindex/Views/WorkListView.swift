@@ -27,11 +27,6 @@ struct WorkListView: View {
                                 .font(.headline)
                                 .foregroundColor(.primary)
                             
-                            if !work.subtitle.isEmpty {
-                                Text(work.subtitle)
-                                    .font(.subheadline)
-                                    .foregroundColor(.secondary)
-                            }
                         }
                         .padding(.vertical, 8)
                     }

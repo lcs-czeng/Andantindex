@@ -11,8 +11,8 @@ struct HomeView: View {
     
     // MARK: Stored Properties
     
-    @EnvironmentObject var viewModel: ComposerViewModel
-
+    @EnvironmentObject var composerVM: ComposerViewModel
+    
     var body: some View {
         TabView {
             IndexTabView()

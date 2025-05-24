@@ -13,7 +13,7 @@ struct ComposerList: Codable {
     let composers: [Composer]
 }
 
-struct Composer: Codable, Identifiable {
+struct Composer: Codable, Identifiable, Equatable {
     let id: String
     let name: String
     let completeName: String
