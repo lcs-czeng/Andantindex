@@ -20,6 +20,7 @@
 		1664B40C2DC5ACD30097608C /* ComposerDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664B40B2DC5ACD30097608C /* ComposerDetailView.swift */; };
 		1664B40E2DC5B43E0097608C /* Work.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664B40D2DC5B43C0097608C /* Work.swift */; };
 		1664B4102DC5B5480097608C /* WorkListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1664B40F2DC5B5480097608C /* WorkListView.swift */; };
+		169BA4FD2DE2929C00928170 /* SharedFunctionsAndConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 169BA4FC2DE2929C00928170 /* SharedFunctionsAndConstants.swift */; };
 		16B8EC052DDE32110094BE59 /* WorkViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8EC042DDE32110094BE59 /* WorkViewModel.swift */; };
 		16B8EC092DDE34EE0094BE59 /* WorkResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 16B8EC082DDE34EE0094BE59 /* WorkResponse.swift */; };
 		16BB5B0B2DCE7385002DD9C1 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 16BB5B0A2DCE737A002DD9C1 /* README.md */; };
@@ -40,6 +41,7 @@
 		1664B40B2DC5ACD30097608C /* ComposerDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ComposerDetailView.swift; sourceTree = "<group>"; };
 		1664B40D2DC5B43C0097608C /* Work.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Work.swift; sourceTree = "<group>"; };
 		1664B40F2DC5B5480097608C /* WorkListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkListView.swift; sourceTree = "<group>"; };
+		169BA4FC2DE2929C00928170 /* SharedFunctionsAndConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharedFunctionsAndConstants.swift; sourceTree = "<group>"; };
 		16B8EC042DDE32110094BE59 /* WorkViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkViewModel.swift; sourceTree = "<group>"; };
 		16B8EC082DDE34EE0094BE59 /* WorkResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkResponse.swift; sourceTree = "<group>"; };
 		16BB5B0A2DCE737A002DD9C1 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
@@ -77,7 +79,7 @@
 			children = (
 				16BB5B0A2DCE737A002DD9C1 /* README.md */,
 				1623BF8B2DC3FEE6000AEDFF /* AndantindexApp.swift */,
-				1639DF712DC6F04F00AC1D12 /* Functions */,
+				169BA4F92DE2926D00928170 /* Shared */,
 				1623BF932DC3FEF2000AEDFF /* Models */,
 				1623BF9F2DC402E4000AEDFF /* ViewModels */,
 				1623BF922DC3FEEC000AEDFF /* Views */,
@@ -120,11 +122,12 @@
 			path = ViewModels;
 			sourceTree = "<group>";
 		};
-		1639DF712DC6F04F00AC1D12 /* Functions */ = {
+		169BA4F92DE2926D00928170 /* Shared */ = {
 			isa = PBXGroup;
 			children = (
+				169BA4FC2DE2929C00928170 /* SharedFunctionsAndConstants.swift */,
 			);
-			path = Functions;
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -212,6 +215,7 @@
 				16B8EC052DDE32110094BE59 /* WorkViewModel.swift in Sources */,
 				1623BF912DC3FEE6000AEDFF /* HomeView.swift in Sources */,
 				1623BF982DC3FFBA000AEDFF /* Composer.swift in Sources */,
+				169BA4FD2DE2929C00928170 /* SharedFunctionsAndConstants.swift in Sources */,
 				1623BF9E2DC40146000AEDFF /* FavouriteComposerView.swift in Sources */,
 				16B8EC092DDE34EE0094BE59 /* WorkResponse.swift in Sources */,
 			);

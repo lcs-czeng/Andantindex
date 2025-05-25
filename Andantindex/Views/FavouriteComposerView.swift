@@ -10,12 +10,12 @@ import SwiftUI
 struct FavouriteComposerView: View {
     
     // MARK: Stored Properties
-    @EnvironmentObject var viewModel: ComposerViewModel
+    @EnvironmentObject var composerVM: ComposerViewModel
     
     var body: some View {
         NavigationView {
             List {
-                ForEach(viewModel.favouriteComposers) { composer in
+                ForEach(composerVM.favouriteComposers) { composer in
                     NavigationLink(destination: ComposerDetailView(composer: composer, works: [])) {
                         HStack {
                             AsyncImage(url: URL(string: composer.portrait)) { image in
@@ -39,7 +39,8 @@ struct FavouriteComposerView: View {
                     
                 }
                 .onDelete { offsets in
-                    viewModel.favouriteComposers.remove(atOffsets: offsets)
+                    composerVM.favouriteComposers.remove(atOffsets: offsets)
+                    composerVM.persistFavouriteComposers()
                 }
             }
             .navigationTitle("Favourites")

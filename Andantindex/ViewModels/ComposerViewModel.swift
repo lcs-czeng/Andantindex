@@ -14,6 +14,8 @@ class ComposerViewModel: ObservableObject {
     @Published var allComposers: [Composer] = []
     
     @Published var favouriteComposers: [Composer] = []
+    
+    let fileLabel = "FavouriteComposers"
         
     // MARK: Computed properties
     
@@ -31,6 +33,7 @@ class ComposerViewModel: ObservableObject {
     
     init() {
         fetchComposers()
+        loadFavouriteComposers()
     }
     
     // MARK: Functions
@@ -101,6 +104,7 @@ class ComposerViewModel: ObservableObject {
             // Add composer
             favouriteComposers.append(composer)
         }
+        persistFavouriteComposers()
     }
 
     func isFavourite(composer: Composer) -> Bool {
@@ -109,4 +113,68 @@ class ComposerViewModel: ObservableObject {
         favouriteComposers.contains(composer)
         
     }
+
+    
+    func loadFavouriteComposers() {
+            
+            // Get a URL that points to the saved JSON data containing our list of favourite jokes
+            let filename = getDocumentsDirectory().appendingPathComponent(fileLabel)
+            
+            print("Filename we are reading persisted composers from is:")
+            print(filename)
+            
+            // Attempt to load from the JSON in the stored file
+            do {
+                
+                // Load the raw data
+                let data = try Data(contentsOf: filename)
+                
+                print("Got data from file, contents are:")
+                print(String(data: data, encoding: .utf8)!)
+                
+                // Decode the data into Swift native data structures
+                self.favouriteComposers = try JSONDecoder().decode([Composer].self, from: data)
+                
+            } catch {
+                
+                print(error)
+                print("Could not load data from file, initializing with empty list.")
+                
+                self.favouriteComposers = []
+            }
+            
+        }
+    
+    func persistFavouriteComposers() {
+            
+            // Get a URL that points to the saved JSON data containing our list of people
+            let filename = getDocumentsDirectory().appendingPathComponent(fileLabel)
+            
+            print("Filename we are writing persisted composers to is is:")
+            print(filename)
+            
+            do {
+                
+                // Create an encoder
+                let encoder = JSONEncoder()
+                encoder.outputFormatting = .prettyPrinted
+                
+                // Encode the list of people we've tracked
+                let data = try encoder.encode(self.favouriteComposers)
+                
+                // Actually write the JSON file to the documents directory
+                try data.write(to: filename, options: [.atomicWrite, .completeFileProtection])
+                
+                print("Wrote data to file, contents are:")
+                print(String(data: data, encoding: .utf8)!)
+                
+                print("Saved data to documents directory successfully.")
+                
+            } catch {
+                
+                print(error)
+                print("Unable to write list of favourite composers to documents directory.")
+            }
+            
+        }
 }
