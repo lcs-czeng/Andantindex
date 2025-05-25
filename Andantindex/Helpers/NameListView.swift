@@ -12,6 +12,17 @@ struct NameListView: View {
     // MARK: Stored Properties
     @EnvironmentObject var viewModel: ComposerViewModel
     @State private var isAscending = true
+    @State private var searchText = ""
+    
+    // MARK: Computed Properties
+    private var filteredComposers: [Composer] {
+        let filtered = viewModel.allComposers.filter { composer in
+            searchText.isEmpty || composer.completeName.localizedCaseInsensitiveContains(searchText)
+        }
+        return filtered.sorted { lhs, rhs in
+            isAscending ? lhs.completeName < rhs.completeName : lhs.completeName > rhs.completeName
+        }
+    }
     
     var body: some View {
         VStack {
@@ -29,9 +40,7 @@ struct NameListView: View {
             } else {
                 
                 // Composer list sorted by name
-                List(viewModel.allComposers.sorted { lhs, rhs in
-                    isAscending ? lhs.completeName < rhs.completeName : lhs.completeName > rhs.completeName
-                }) { composer in
+                List(filteredComposers) { composer in
                     
                     NavigationLink {
                         ComposerDetailView(composer: composer, works: sampleKeyboardWorks)
@@ -42,7 +51,7 @@ struct NameListView: View {
                 .listStyle(.grouped)
             }
         }
-    }
+        .searchable(text: $searchText, prompt: "Search composers")    }
 }
 
 #Preview {
