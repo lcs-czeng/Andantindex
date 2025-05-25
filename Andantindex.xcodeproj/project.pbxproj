@@ -83,6 +83,7 @@
 				1623BF932DC3FEF2000AEDFF /* Models */,
 				1623BF9F2DC402E4000AEDFF /* ViewModels */,
 				1623BF922DC3FEEC000AEDFF /* Views */,
+				169BA4FE2DE2A44700928170 /* Helpers */,
 				1623BF8C2DC3FEE6000AEDFF /* Assets.xcassets */,
 			);
 			path = Andantindex;
@@ -93,11 +94,6 @@
 			children = (
 				1623BF8D2DC3FEE6000AEDFF /* HomeView.swift */,
 				1639DF6B2DC6D33300AC1D12 /* IndexTabView.swift */,
-				1639DF6F2DC6D36900AC1D12 /* PeriodListView.swift */,
-				1639DF6D2DC6D35A00AC1D12 /* NameListView.swift */,
-				1623BFA42DC41007000AEDFF /* ComposerListView.swift */,
-				1664B40B2DC5ACD30097608C /* ComposerDetailView.swift */,
-				1664B40F2DC5B5480097608C /* WorkListView.swift */,
 				1623BF9D2DC40140000AEDFF /* FavouriteComposerView.swift */,
 			);
 			path = Views;
@@ -106,9 +102,9 @@
 		1623BF932DC3FEF2000AEDFF /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				16B8EC082DDE34EE0094BE59 /* WorkResponse.swift */,
-				1664B40D2DC5B43C0097608C /* Work.swift */,
 				1623BF972DC3FFBA000AEDFF /* Composer.swift */,
+				1664B40D2DC5B43C0097608C /* Work.swift */,
+				16B8EC082DDE34EE0094BE59 /* WorkResponse.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -128,6 +124,18 @@
 				169BA4FC2DE2929C00928170 /* SharedFunctionsAndConstants.swift */,
 			);
 			path = Shared;
+			sourceTree = "<group>";
+		};
+		169BA4FE2DE2A44700928170 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				1639DF6D2DC6D35A00AC1D12 /* NameListView.swift */,
+				1639DF6F2DC6D36900AC1D12 /* PeriodListView.swift */,
+				1623BFA42DC41007000AEDFF /* ComposerListView.swift */,
+				1664B40B2DC5ACD30097608C /* ComposerDetailView.swift */,
+				1664B40F2DC5B5480097608C /* WorkListView.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -350,6 +358,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UG443984D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -357,6 +366,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -377,6 +387,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 4UG443984D;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -384,6 +395,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 18.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

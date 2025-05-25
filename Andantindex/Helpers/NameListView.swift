@@ -22,7 +22,7 @@ struct NameListView: View {
             
             if viewModel.allComposers.isEmpty {
                 
-                // MARK: Loading State
+                // Loading State
                 ProgressView("Loading composers...")
                     .progressViewStyle(CircularProgressViewStyle())
                 

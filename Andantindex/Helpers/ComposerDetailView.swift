@@ -29,6 +29,7 @@ struct ComposerDetailView: View {
                     
                     HStack {
                         
+                        // Favourite Toggle
                         Button(action: {
                             composerVM.toggleFavourite(composer: composer)
                         }) {

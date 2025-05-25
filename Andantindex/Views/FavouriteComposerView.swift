@@ -15,6 +15,7 @@ struct FavouriteComposerView: View {
     var body: some View {
         NavigationView {
             List {
+                // Favourite Composers List
                 ForEach(composerVM.favouriteComposers) { composer in
                     NavigationLink(destination: ComposerDetailView(composer: composer, works: [])) {
                         HStack {
@@ -38,6 +39,7 @@ struct FavouriteComposerView: View {
                     }
                     
                 }
+                // Enable Swipe-to-Delete and Persist Changes
                 .onDelete { offsets in
                     composerVM.favouriteComposers.remove(atOffsets: offsets)
                     composerVM.persistFavouriteComposers()

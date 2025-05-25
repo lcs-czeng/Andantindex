@@ -117,7 +117,7 @@ class ComposerViewModel: ObservableObject {
     
     func loadFavouriteComposers() {
             
-            // Get a URL that points to the saved JSON data containing our list of favourite jokes
+            // Get a URL that points to the saved JSON data containing our list of favourite composers
             let filename = getDocumentsDirectory().appendingPathComponent(fileLabel)
             
             print("Filename we are reading persisted composers from is:")

@@ -20,7 +20,6 @@ struct IndexTabView: View {
     @EnvironmentObject var viewModel: ComposerViewModel
     @State private var selectedView: IndexSelection = .period
     
-    // MARK: View Body
     var body: some View {
         NavigationView {
             VStack {
