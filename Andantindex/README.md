@@ -18,6 +18,12 @@ Favourite functions: https://chatgpt.com/share/6832265b-22c8-8010-b4ea-2077a3627
 
 Deleting favourite composers: https://www.hackingwithswift.com/books/ios-swiftui/deleting-items-using-ondelete
 
+Search Bar: https://chatgpt.com/share/68327383-14c4-8010-a599-d9eedc2db2ad
+
 ## Images
 
-From API
+From API: https://github.com/openopus-org/openopus_api
+
+## Composer information and works
+
+From API: https://github.com/openopus-org/openopus_api
